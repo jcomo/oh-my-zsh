@@ -1,11 +1,11 @@
 # inspired and built off of the sorin zsh theme
 
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
-  local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
-  
-  PROMPT='%{$fg[yellow]%}%c$(git_prompt_info)%(!.%{$fg_bold[red]%}#.%{$fg[green]%} λ)%{$reset_color%} '
+  local return_status="%{$fg[red]%}%(?..⤬)%{$reset_color%}"
 
-  ZSH_THEME_GIT_PROMPT_PREFIX=" %{$reset_color%}(%{$fg[blue]%}"
+  PROMPT='%{$fg[yellow]%}%c$(git_prompt_info)%(!.%{$fg_bold[red]%}#.%{$fg[magenta]%} λ)%{$reset_color%} '
+
+  ZSH_THEME_GIT_PROMPT_PREFIX=" %{$reset_color%}(%{$fg[red]%}"
   ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
   ZSH_THEME_GIT_PROMPT_DIRTY=""
   ZSH_THEME_GIT_PROMPT_CLEAN=""
@@ -19,6 +19,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
   ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 else 
+  local return_status="%(?..⤬)"
   local return_status="%(?::⏎)"
   
   PROMPT='%c$(git_prompt_info) %(!.#.❯) '
